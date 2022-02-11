@@ -1,12 +1,16 @@
 <?php
-//Uzair is working on this!!!
-require_once '../Templates/Header.php';
+require_once '../Templates/MainFunctions.php';
+require_once '../Templates/Functions.php';
+getHeader();
 ?>
 <div class="container-MainPageEmployee">
     <?php
-    include '../Templates/Navbar.php';
+    getNavBar();
+    getEmployeeWelcome();
     ?>
+
+
 </div>
 <?php
-require_once '../Templates/Footer.php';
+getFooter();
 ?>
