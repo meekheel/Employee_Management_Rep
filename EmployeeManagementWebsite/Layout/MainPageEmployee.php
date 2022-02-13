@@ -7,10 +7,13 @@ getHeader();
     <?php
     getNavBar();
     getEmployeeWelcome();
+    getEmployeeEmail();
+
+    getFooter();
     ?>
 
 
 </div>
 <?php
-getFooter();
+
 ?>

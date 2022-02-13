@@ -28,6 +28,9 @@ function getHeader(){
 
 function getFooter(){
 ?>
+    <div class="footer">
+        <p>Made by Uzair, Edward, Meekheel, and Darryl @2022</p>
+    </div>
     </body>
     </html>
 <?php
