@@ -4,10 +4,21 @@
 function getNavBar(){
 ?>
     <div class="navbar">
-    <h1 id="navbar-Website-Title"><a href="../Layout/MainPageEmployee.php">EmPortal</a></h1>
+    <h1 id="navbar-Website-Title"><a href="../Layout/MainPageEmployee.php">EmpPortal</a></h1>
     <div id="navbar-Inbox"><a href="#">Inbox</a></div>
     <div id="navbar-Absences"><a href="#">Absences & Requests</a></div>
     <div id="navbar-Pay"><a href="#">Pay Info</a></div>
+</div>
+<?php
+}
+
+function getNavBarMan(){
+    ?>
+    <div class="navbar">
+    <h1 id="navbar-Website-Title"><a href="../Layout/MainPageManager.php">EmpPortal</a></h1>
+    <div id="navbar-Inbox"><a href="#">Inbox</a></div>
+    <div id="navbar-Absences"><a href="#">Employees</a></div>
+    <div id="navbar-Pay"><a href="#">Schedule</a></div>
 </div>
 <?php
 }
