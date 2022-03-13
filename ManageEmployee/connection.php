@@ -1,11 +1,11 @@
-<?php
-
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "login_db";
-
-if (!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname)) {
-    die("failed to connect");
+<?php 
+require_once 'dbConfig.php';
+if(!mysqli_connect_error()){
+    //redirection to manipulate data
+    header('location:manipulateData.php');
+    
+}else{
+    header('location:errorDatabase.php');
 }
+
 ?>
