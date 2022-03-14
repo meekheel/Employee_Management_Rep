@@ -35,17 +35,17 @@ body{
 	grid-column: 1;
 	padding-left: 1rem;
 }
-#navbar-Inbox{
+#navbar-Item1{
 	grid-column: 1 2;
 	text-align: center;
 }
-#navbar-Absences{
+#navbar-Item2{
 	grid-column: 2 3;
 	text-align: center;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
 }
-#navbar-Pay{
+#navbar-Item3{
 	grid-column: 3 4;
 	text-align: center;
 }
