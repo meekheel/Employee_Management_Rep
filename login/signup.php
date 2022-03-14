@@ -9,7 +9,7 @@
         
         if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
             $user_id = random_num(20);
-            $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
+            $query = "insert into parttimeemployee (PartTimeEmployeeId,Username,Password) values ('$user_id','$user_name','$password')";
             mysqli_query($con,$query);
             header("Location: login.php");
             die();
@@ -120,7 +120,7 @@ button{
     </div>
     <form method="post">
         <h3>Employee Sign up</h3>
-
+		<h2>The system will assign you to the correst position as soon that you create your account.</h2>
         <label for="username">Username</label>
         <input type="text" placeholder="Username only" name="user_name">
 
