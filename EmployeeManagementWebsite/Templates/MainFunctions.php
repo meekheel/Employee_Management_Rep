@@ -18,7 +18,7 @@ function getNavBarMan(){
     <h1 id="navbar-Website-Title"><a href="../Layout/MainPageManager.php">EmpPortal</a></h1>
     <div id="navbar-Item1"><a href="#">Inbox</a></div>
     <div id="navbar-Item2"><a href="../Layout/ManageEmployee.php">Employees</a></div>
-    <div id="navbar-Item3"><a href="#">Schedule</a></div>
+    <div id="navbar-Item3"><a href="../Layout/Schedule.php">Schedule</a></div>
 </div>
 <?php
 }
