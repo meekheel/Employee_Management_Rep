@@ -51,8 +51,4 @@ function getFooter(){
 <?php
 }
 
-
-
-
-
 ?>
