@@ -9,7 +9,6 @@ getHeader();
     getManagerWelcome();
     getEmployeeEmail();
     getCreatorNames();
-    
     getFooter();
     ?>
 
