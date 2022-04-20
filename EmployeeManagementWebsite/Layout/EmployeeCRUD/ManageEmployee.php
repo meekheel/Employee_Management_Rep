@@ -67,12 +67,12 @@
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
                         <h2 class="pull-left">Employees Details</h2>
-                        <a href="EmployeeCRUD/create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
+                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
                     </div>
                     
                     <?php
                     // Include config file
-                    require_once "../Templates/connection.php";
+                    require_once "dbConfig.php";
                     
                     // Attempt select query execution
                     $sql = "SELECT * FROM fulltimeemployee";
@@ -96,9 +96,9 @@
                                         echo "<td>" . $row['Username'] . "</td>";
                                         echo "<td>" . $row['Salary'] . "</td>";
                                         echo "<td>";
-                                            echo '<a href="./EmployeeCRUD/read.php?id='. $row['FullTimeEmployeeId'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                            echo '<a href="./EmployeeCRUD/update.php?id='. $row['FullTimeEmployeeId'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                            echo '<a href="./EmployeeCRUD/delete.php?id='. $row['FullTimeEmployeeId'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                            echo '<a href="read.php?id='. $row['FullTimeEmployeeId'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                            echo '<a href="update.php?id='. $row['FullTimeEmployeeId'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                            echo '<a href="delete.php?id='. $row['FullTimeEmployeeId'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                         echo "</td>";
                                     echo "</tr>";
                                 }

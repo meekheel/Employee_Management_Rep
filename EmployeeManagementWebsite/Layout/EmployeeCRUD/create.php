@@ -9,28 +9,28 @@ $fullname_err = $address_err = $managerId_err = $salary_err = "";
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate name
-    $input_fullname = trim($_POST["FullName"]);
+    $input_fullname = trim($_POST["name"]);
     if(empty($input_fullname)){
         $name_err = "Please enter a name.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+    } elseif(!filter_var($input_fullname, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
         $name_err = "Please enter a valid name.";
     } else{
-        $fullName = $input_name;
+        $fullName = $input_fullname;
     }
     
-    $input_username = trim($_POST["Username"]);
+    $input_username = trim($_POST["username"]);
     if(empty($input_username)){
         $username_err = "Please enter a Username.";
     } else{
         $userName = $input_username;
     }
     
-    $input_managerid = trim($_POST["ManagerId"]);
-    if(empty($input_managerid)){
-        $managerId_err = "Please select a Manager ID.";
-    } else{
-        $managerId = $input_managerid;
-    }
+//     $input_managerid = trim($_POST["ManagerId"]);
+//     if(empty($input_managerid)){
+//         $managerId_err = "Please select a Manager ID.";
+//     } else{
+//         $managerId = $input_managerid;
+//     }
     
     // Validate salary
     $input_salary = trim($_POST["salary"]);
@@ -45,11 +45,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($fullname_err) && empty($salary_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO FullTimeEmployee (FullName, Username, ManagerId, Salary) VALUES (?, ?, ?, ?)";
-        $sql2 = $mysqli->query("SELECT ManagerId from manager");
+        $sql = "INSERT INTO FullTimeEmployee (FullName, Username, Salary) VALUES (?, ?, ?)";
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_name, $param_username, $param_managerid, $param_salary);
+            mysqli_stmt_bind_param($stmt, "sss", $param_name, $param_username, $param_salary);
             
             // Set parameters
             $param_name = $fullName;
@@ -161,18 +160,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <input type="text" name="salary" class="form-control <?php echo (!empty($salary_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $salary; ?>">
                             <span class="invalid-feedback"><?php echo $salary_err;?></span>
                         </div>
-                        <div class="form-group">
-                        <label>Manager ID</label>
-                        <select name="ManagerId">
-                            <?php 
-                            while($rows = $sql2->fetch_assoc()){
-                                $managerId = $rows['ManagerId'];
-                                echo"<option value='$managerId'>$managerId</option>";
-                            }
-                            ?>
-                    	</select>
-                    	<input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="../ManageEmployee.php" class="btn btn-secondary ml-2">Cancel</a>
+<!--                         <div class="form-group"> -->
+<!--                             <label>Manager ID</label> -->
+<!--                             <select name="ManagerId"> -->
+                                <?php 
+//                                 while($rows = $sql2->fetch_assoc()){
+//                                     $managerId = $rows['ManagerId'];
+//                                     echo"<option value='$managerId'>$managerId</option>";
+//                                 }
+//                                 ?>
+<!--                         	</select> -->
+<!--                     	</div> -->
+                    	<div>
+                        	<input type="submit" class="btn btn-primary" value="Submit">
+                            <a href="ManageEmployee.php" class="btn btn-secondary ml-2">Cancel</a>
                         </div>
 
                     </form>

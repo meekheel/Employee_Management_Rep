@@ -58,7 +58,7 @@
 <div class="navbar">
     <h1 id="navbar-Website-Title"><a href="../MainPageManager.php">EmpPortal</a></h1>
     <div id="navbar-Item1"><a href="../inbox.php">Inbox</a></div>
-    <div id="navbar-Item2"><a href="../ManageEmployee.php">Employees</a></div>
+    <div id="navbar-Item2"><a href="ManageEmployee.php">Employees</a></div>
     <div id="navbar-Item3"><a href="../Schedule.php">Schedule</a></div>
     </div>
     <div class="wrapper">
@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="mt-5 mb-3">Invalid Request</h2>
-                    <div class="alert alert-danger">Sorry, you've made an invalid request. Please <a href="../ManageEmployee.php" class="alert-link">go back</a> and try again.</div>
+                    <div class="alert alert-danger">Sorry, you've made an invalid request. Please <a href="ManageEmployee.php" class="alert-link">go back</a> and try again.</div>
                 </div>
             </div>        
         </div>

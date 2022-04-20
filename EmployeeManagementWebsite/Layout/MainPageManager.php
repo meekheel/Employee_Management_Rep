@@ -7,7 +7,7 @@ getHeader();
     <?php
     getNavBarMan();
     getManagerWelcome();
-    getEmployeeEmail();
+    //getEmployeeEmail();
     getCreatorNames();
     getFooter();
     ?>

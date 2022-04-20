@@ -12,7 +12,7 @@ function getEmployeeWelcome(){
 function getManagerWelcome(){
     ?>
     <div class="Employee-Greeting">
-        <h2>Hi "Manager", welcome to your</br>
+        <h2>Hi Manager, welcome to your</br>
         Personal Manager dashboard,</h2>
     </div>
 <?php
