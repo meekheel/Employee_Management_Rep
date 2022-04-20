@@ -4,6 +4,8 @@ if(isset($_GET["FullTimeEmployeeId"]) && !empty(trim($_GET["FullTimeEmployeeId"]
     // Include config file
     require_once "dbConfig.php";
     
+    echo "hi3";
+    
     // Prepare a select statement
     $sql = "SELECT * FROM FullTimeEmployee WHERE FullTimeEmployeeId = ?";
     
@@ -13,10 +15,13 @@ if(isset($_GET["FullTimeEmployeeId"]) && !empty(trim($_GET["FullTimeEmployeeId"]
         
         // Set parameters
         $param_id = trim($_GET["FullTimeEmployeeId"]);
+        echo "hi2";
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
             $result = mysqli_stmt_get_result($stmt);
+            
+            echo "hi1";
     
             if(mysqli_num_rows($result) == 1){
                 /* Fetch result row as an associative array. Since the result set
@@ -24,12 +29,17 @@ if(isset($_GET["FullTimeEmployeeId"]) && !empty(trim($_GET["FullTimeEmployeeId"]
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
                 // Retrieve individual field value
-                $name = $row["name"];
-                $address = $row["address"];
-                $salary = $row["salary"];
+                $name = $row["FullName"];
+                $username = $row["Username"];
+                $salary = $row["Salary"];
+                echo  "hi";
+                
+                echo "hi0";
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
-                header("location: error.php");
+                //header("location: error.php");
+                echo "hi";
+                
                 exit();
             }
             
@@ -45,7 +55,9 @@ if(isset($_GET["FullTimeEmployeeId"]) && !empty(trim($_GET["FullTimeEmployeeId"]
     mysqli_close($con);
 } else{
     // URL doesn't contain id parameter. Redirect to error page
-    header("location: error.php");
+    //header("location: error.php");
+    echo var_dump($_GET["FullTimeEmployeeId"]);
+    echo "hi4";
     exit();
 }
 ?>
@@ -123,14 +135,14 @@ if(isset($_GET["FullTimeEmployeeId"]) && !empty(trim($_GET["FullTimeEmployeeId"]
                         <p><b><?php echo $row["FullName"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
+                        <label>Username</label>
                         <p><b><?php echo $row["Username"]; ?></b></p>
                     </div>
                     <div class="form-group">
                         <label>Salary</label>
                         <p><b><?php echo $row["Salary"]; ?></b></p>
                     </div>
-                    <p><a href="../ManageEmployee.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="ManageEmployee.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>        
         </div>

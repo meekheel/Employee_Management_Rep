@@ -79,30 +79,30 @@
                     if($result = mysqli_query($con, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo '<table class="table table-bordered table-striped">';
-                                echo "<thead>";
-                                    echo "<tr>";
-                                        echo "<th>Employee ID</th>";
-                                        echo "<th>Name</th>";
-                                        echo "<th>Username</th>";
-                                        echo "<th>Salary</th>";
-                                        echo "<th>Action</th>";
-                                    echo "</tr>";
-                                echo "</thead>";
-                                echo "<tbody>";
-                                while($row = mysqli_fetch_array($result)){
-                                    echo "<tr>";
-                                        echo "<td>" . $row['FullTimeEmployeeId'] . "</td>";
-                                        echo "<td>" . $row['FullName'] . "</td>";
-                                        echo "<td>" . $row['Username'] . "</td>";
-                                        echo "<td>" . $row['Salary'] . "</td>";
-                                        echo "<td>";
-                                            echo '<a href="read.php?id='. $row['FullTimeEmployeeId'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                            echo '<a href="update.php?id='. $row['FullTimeEmployeeId'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                            echo '<a href="delete.php?id='. $row['FullTimeEmployeeId'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
-                                        echo "</td>";
-                                    echo "</tr>";
-                                }
-                                echo "</tbody>";                            
+                            echo "<thead>";
+                            echo "<tr>";
+                            echo "<th>ID</th>";
+                            echo "<th>Name</th>";
+                            echo "<th>Username</th>";
+                            echo "<th>Salary</th>";
+                            echo "<th>Action</th>";
+                            echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<tr>";
+                                echo "<td>" . $row['FullTimeEmployeeId'] . "</td>";
+                                echo "<td>" . $row['FullName'] . "</td>";
+                                echo "<td>" . $row['Username'] . "</td>";
+                                echo "<td>" . $row['Salary'] . "</td>";
+                                echo "<td>";
+                                echo '<a href="read.php?id='. $row['FullTimeEmployeeId'] .'" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                echo '<a href="update.php?id='. $row['FullTimeEmployeeId'] .'" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                echo '<a href="delete.php?id='. $row['FullTimeEmployeeId'] .'" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";
                             echo "</table>";
                             // Free result set
                             mysqli_free_result($result);
@@ -112,6 +112,7 @@
                     } else{
                         echo "Oops! Something went wrong. Please try again later.";
                     }
+                    
                     // Close connection
                     mysqli_close($con);
                     ?>
